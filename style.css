@@ -1,5 +1,5 @@
 /* Reset some default browser styles */
-body, ul, li {
+body, ul, li, figure {
     margin: 0;
     padding: 0;
     list-style: none;
