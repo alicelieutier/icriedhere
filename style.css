@@ -1,5 +1,5 @@
 /* Reset some default browser styles */
-body, h1, h2, p, ul, li {
+body, ul, li {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -16,9 +16,9 @@ body {
 
 main {
   max-width: 600px;
-  min-height: 50vh;
-  margin: 40px auto;
-  padding: 20px;
+  min-height: 70vh;
+  padding: 5px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,8 +35,6 @@ main a:hover {
 /* Header & Navigation */
 header {
     padding: 20px;
-    position: sticky;
-    top: 0;
     width: 100%;
     z-index: 100;
 }
@@ -56,7 +54,6 @@ nav ul li a {
     text-decoration: none;
     color: rgb(4, 57, 100);
     font-weight: bold;
-    padding: 10px 15px;
     transition: color 0.3s ease;
 }
 
