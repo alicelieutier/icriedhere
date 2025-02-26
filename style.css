@@ -61,6 +61,19 @@ nav ul li a[href="#"], nav ul li a:hover {
     color: #20acbf;
 }
 
+/* Gallery */
+
+#gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}   
+
+#gallery img {
+    height: 400px;
+    margin: 5px;
+}
+
 /* Footer */
 footer {
     margin-top: 40px;
