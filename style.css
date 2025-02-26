@@ -24,6 +24,12 @@ main {
   justify-content: center;
 }
 
+#stickers-photo {
+    transform: rotate(-90deg);
+    width: 500px;
+    margin: -70px auto;
+}
+
 a {
     color: #0803c4;
 }
