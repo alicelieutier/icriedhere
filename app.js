@@ -23,7 +23,10 @@ app.use(bodyParser.json());
 
 // Database connection
 const pool = new Pool({
-    connectionString: `${process.env.DATABASE_URL}?ssl=true`
+    connectionString: `${process.env.DATABASE_URL}?ssl=true`,
+    ssl: {
+        rejectUnauthorized: false
+    },
 });
 
 const defaultDescription = "I cried here is a design project about normalising emotions everywhere";
