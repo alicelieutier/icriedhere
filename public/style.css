@@ -95,3 +95,72 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+
+#story-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 20px 30px;
+    border-radius: 15px;
+    background-color: #fff790;
+}
+
+#story-form textarea {
+    height: 4em;
+}
+
+#story-form input,
+#story-form textarea {
+    padding: 5px;
+    font-family: inherit;
+    font-size: 1em;
+    border-radius: 5px;
+    border: none;
+}
+
+#story-form input[type="submit"] {
+    background-color: #20acbf;
+    color: white;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+#story-form input[type="submit"]:hover {
+    background-color: rgb(4, 57, 100);
+}
+
+div.small-prints {
+    font-size: 0.6em;
+    width: 83%;
+    margin: auto;
+}
+
+#story-form .form-details {
+    display: flex;
+    flex-direction: row;
+}
+
+/* each story should be in a card, and the details written smaller to the right */
+#stories-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 2em 0;
+}
+
+.story {
+    padding: 10px;
+    text-align: left;
+}
+
+.story p {
+    margin: 0;
+}
+
+.story .story-details {
+    font-size: 0.8em;
+    text-align: right;
+}
