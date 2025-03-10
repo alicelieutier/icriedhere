@@ -23,10 +23,7 @@ app.use(bodyParser.json());
 
 // Database connection
 const pool = new Pool({
-    connectionString: `${process.env.DATABASE_URL}?ssl=true`,
-    ssl: {
-        rejectUnauthorized: false
-    },
+    connectionString: process.env.DATABASE_URL,
 });
 
 const defaultDescription = "I cried here is a design project about normalising emotions everywhere";
@@ -76,7 +73,12 @@ app.get('/stories', async (req, res) => {
         });
     } catch (err) {
         console.error(err);
-        res.send('Error retrieving stories');
+        res.render('stories', {
+            title: 'Stories - I Cried Here',
+            description: `${defaultDescription}. Share your story of crying on this page.`,
+            stories: [],
+            error: 'Error retrieving stories'
+        });
     }
 });
 

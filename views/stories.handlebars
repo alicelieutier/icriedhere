@@ -7,6 +7,9 @@
                 <div class="story-details">{{this.details}}</div>
             </div>
         {{/each}}
+        {{#if error}}
+            <p>{{error}}</p>
+        {{/if}}
     </section>
     <form id="story-form" action="/stories" method="POST">
         <label for="story">When was the last time YOU cried? Where were you? How did you feel?</label>
