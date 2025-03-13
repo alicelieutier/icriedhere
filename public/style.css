@@ -27,7 +27,7 @@ main {
 #stickers-photo {
     transform: rotate(-90deg);
     width: 500px;
-    margin: -70px auto;
+    margin: -60px auto;
 }
 
 a {
@@ -40,7 +40,8 @@ main a:hover {
 
 /* Header & Navigation */
 header {
-    padding: 20px;
+    box-sizing: border-box;
+    padding: 20px 5px;
     width: 100%;
     z-index: 100;
 }
@@ -49,7 +50,8 @@ nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 0 1em;
 }
 
 nav ul li {
@@ -67,6 +69,10 @@ nav ul li a[href="#"], nav ul li a:hover {
     color: #20acbf;
 }
 
+img {
+    max-width: 100%;
+}
+
 /* Gallery */
 
 #gallery {
@@ -76,7 +82,7 @@ nav ul li a[href="#"], nav ul li a:hover {
 }   
 
 #gallery img {
-    height: 400px;
+    max-height: 400px;
     margin: 5px;
 }
 
@@ -102,14 +108,25 @@ footer a:hover {
     flex-direction: column;
     gap: 1em;
     margin: 20px auto;
-    max-width: 500px;
+    max-width: 100%;
     padding: 20px 30px;
     border-radius: 15px;
     background-color: #fff790;
+    box-sizing: border-box;
+}
+
+#story-form label.required::after {
+    content: " *";
+    color: rgb(151, 6, 6);
+    font-weight: bold;
 }
 
 #story-form textarea {
     height: 4em;
+}
+
+#story-form label {
+    display: block;
 }
 
 #story-form input,
@@ -141,6 +158,9 @@ div.small-prints {
 #story-form .form-details {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    justify-content: space-around;
 }
 
 #stories-list {
