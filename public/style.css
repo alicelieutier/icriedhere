@@ -143,7 +143,6 @@ div.small-prints {
     flex-direction: row;
 }
 
-/* each story should be in a card, and the details written smaller to the right */
 #stories-list {
     display: flex;
     flex-direction: column;

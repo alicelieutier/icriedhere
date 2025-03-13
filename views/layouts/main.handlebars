@@ -6,6 +6,19 @@
     <meta name="description" content="{{{description}}}" />
     <title>{{{title}}}</title>
     <link rel="stylesheet" href="/style.css" />
+
+    {{#if stylesheets}}
+      {{#each stylesheets}}
+        <link rel="stylesheet" href="/{{this}}" />
+      {{/each}}
+    {{/if}}
+
+    {{#if scripts}}
+      {{#each scripts}}
+        <script async src="/{{this}}"></script>
+      {{/each}}
+    {{/if}}
+
     <link rel="icon" href="/favicon.ico" />
     <script data-goatcounter="https://icriedhere.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">

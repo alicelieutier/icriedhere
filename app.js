@@ -7,7 +7,6 @@ const bodyParser = require('body-parser');
 const moment = require('moment');
 const app = express();
 
-// Set Handlebars as the view engine
 app.engine('handlebars', engine({
     partialsDir: path.join(__dirname, 'views', 'partials')
 }));
@@ -17,11 +16,9 @@ app.set('view engine', 'handlebars');
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Use body-parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Database connection
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
 });
@@ -49,6 +46,14 @@ app.get('/stickers', (req, res) => {
     });
 });
 
+app.get('/stories', async (req, res) => {
+    res.render('stories', {
+        title: 'Stories - I Cried Here',
+        description: `${defaultDescription}. Share your story of crying on this page.`,
+        stylesheets: ['loader.css'],
+        scripts: ['stories.js'],
+    });
+});
 
 const formatStoryDetails = (story) => {
     const name = story.name || 'Anonymous';
@@ -57,42 +62,31 @@ const formatStoryDetails = (story) => {
     return `${name} ${age} - ${created_at}`;
 };
 
-app.get('/stories', async (req, res) => {
+app.get('/api/stories', async (req, res) => {
     try {
         const result = await pool.query('SELECT * FROM stories WHERE visible = true');
-        const stories = result.rows.map(story => {
-            return {
-                story: story.story,
-                details: formatStoryDetails(story)
-            };
-        });
-        res.render('stories', {
-            title: 'Stories - I Cried Here',
-            description: `${defaultDescription}. Share your story of crying on this page.`,
-            stories: stories
-        });
+        const stories = result.rows.map(story => ({
+            story: story.story,
+            details: formatStoryDetails(story)
+        }));
+        res.json(stories);
     } catch (err) {
         console.error(err);
-        res.render('stories', {
-            title: 'Stories - I Cried Here',
-            description: `${defaultDescription}. Share your story of crying on this page.`,
-            stories: [],
-            error: 'Error retrieving stories'
-        });
+        res.status(500).json({ error: 'Error retrieving stories' });
     }
 });
 
-app.post('/stories', async (req, res) => {
+app.post('/api/stories', async (req, res) => {
     const { story, name, age, email } = req.body;
     try {
         await pool.query(
             'INSERT INTO stories (story, visible, name, age, email, created_at) VALUES ($1, $2, $3, $4, $5, $6)',
             [story, false, name || null, age || null, email || null, new Date()]
         );
-        res.redirect('/stories');
+        res.status(201).json({ message: 'Story submitted successfully' });
     } catch (err) {
         console.error(err);
-        res.send('Error submitting story');
+        res.status(500).json({ error: 'Error submitting story' });
     }
 });
 

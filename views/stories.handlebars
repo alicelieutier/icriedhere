@@ -1,34 +1,26 @@
 <main>
     <h1>Stories</h1>
     <section id="stories-list">
-        {{#each stories}}
-            <div class="story">
-                <p>{{this.story}}</p>
-                <div class="story-details">{{this.details}}</div>
-            </div>
-        {{/each}}
-        {{#if error}}
-            <p>{{error}}</p>
-        {{/if}}
+        <div>Loading stories...</div>
+        <div class="loader"></div>
     </section>
-    <form id="story-form" action="/stories" method="POST">
+    <form id="story-form">
         <label for="story">When was the last time YOU cried? Where were you? How did you feel?</label>
-        <textarea name="story" placeholder="Share your story.." required></textarea>
+        <textarea id="story" name="story" placeholder="Share your story.." required></textarea>
         <div class="form-details">
             <div>
                 <label for="name">What's your name? (optional)</label>
-                <input type="text" name="name" placeholder="Your name">
+                <input type="text" id="name" name="name" placeholder="Your name">
             </div>
             <div>
                 <label for="age">How old are you? (optional)</label>
-                <input type="number" name="age" placeholder="Your age">
+                <input type="number" id="age" name="age" placeholder="Your age">
             </div>            
         </div>
-        <label for="email">Leave your email if you're happy to be contacted about your story. <div class="small-prints">Only I (Alice 🙂) will have access to your email. It will not be made public or shared with anyone else. You will not receive emails except to personnally follow up on what you shared.</div></label>
-        <input type="email" name="email" placeholder="hello@example.com">
+        <label for="email">Leave your email if you're happy to be contacted about your story. <div class="small-prints">Only I (Alice 🙂) will have access to your email. It will not be made public or shared with anyone else. You will not receive emails except to personally follow up on what you shared.</div></label>
+        <input type="email" id="email" name="email" placeholder="hello@example.com">
         <div>
             <input type="submit" value="Share">
         </div>
-        
     </form>
 </main>
