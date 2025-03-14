@@ -23,6 +23,17 @@ const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
 });
 
+// 301 redirects because Google indexed my old .html pages
+app.use((req, res, next) => {
+    if (req.path === '/stickers.html') {
+        res.redirect(301, '/stickers');
+    } else if (req.path === '/about.html') {
+        res.redirect(301, '/about');
+    } else {
+        next();
+    }
+});
+
 const defaultDescription = "I cried here is a design project about normalising emotions everywhere";
 
 app.get('/', (req, res) => {
