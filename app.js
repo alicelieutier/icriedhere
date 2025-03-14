@@ -59,7 +59,7 @@ const formatStoryDetails = (story) => {
     const name = story.name || 'Anonymous';
     const age = story.age ? `, ${story.age}` : '';
     const created_at = moment(story.created_at).fromNow();
-    return `${name} ${age} - ${created_at}`;
+    return `${name}${age} - ${created_at}`;
 };
 
 app.get('/api/stories', async (req, res) => {
