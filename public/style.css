@@ -2,7 +2,6 @@
 body, ul, li, figure {
     margin: 0;
     padding: 0;
-    list-style: none;
 }
 
 body {
@@ -13,6 +12,10 @@ body {
     font-weight: 400;
     text-align: center;
   }
+
+ul, ol {
+    text-align: left;
+}
 
 main {
   max-width: 600px;
@@ -71,6 +74,10 @@ nav ul li a[href="#"], nav ul li a:hover {
 
 img {
     max-width: 100%;
+}
+
+figcaption {
+    font-size: 0.8em;
 }
 
 /* Gallery */
