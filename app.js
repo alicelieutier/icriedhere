@@ -6,6 +6,7 @@ const { Pool } = require('pg');
 const bodyParser = require('body-parser');
 const moment = require('moment');
 const app = express();
+const port = 3000;
 
 app.engine('handlebars', engine({
     partialsDir: path.join(__dirname, 'views', 'partials')
@@ -19,8 +20,26 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+
+// Database connection
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
+});
+
+const query = (text, params) => {
+    console.log('Executing query:', text, params);
+    return pool.query(text, params)
+}
+
+// Log HTTP requests and responses
+app.use((req, res, next) => {
+    console.log(`${req.method} request for ${req.url}`);
+    const start = Date.now();
+    res.on('finish', () => {
+        const duration = Date.now() - start;
+        console.log(`${res.statusCode} response for ${req.url} in ${duration}ms`);
+    });
+    next();
 });
 
 // 301 redirects because Google indexed my old .html pages
@@ -75,7 +94,7 @@ const formatStoryDetails = (story) => {
 
 app.get('/api/stories', async (req, res) => {
     try {
-        const result = await pool.query('SELECT * FROM stories WHERE visible = true');
+        const result = await query('SELECT * FROM stories WHERE visible = true');
         const stories = result.rows.map(story => ({
             story: story.story,
             details: formatStoryDetails(story)
@@ -90,7 +109,7 @@ app.get('/api/stories', async (req, res) => {
 app.post('/api/stories', async (req, res) => {
     const { story, name, age, email } = req.body;
     try {
-        await pool.query(
+        await query(
             'INSERT INTO stories (story, visible, name, age, email, created_at) VALUES ($1, $2, $3, $4, $5, $6)',
             [story, false, name || null, age || null, email || null, new Date()]
         );
@@ -99,13 +118,6 @@ app.post('/api/stories', async (req, res) => {
         console.error(err);
         res.status(500).json({ error: 'Error submitting story' });
     }
-});
-
-const port = 3000;
-
-app.use((req, res, next) => {
-    console.log(`${req.method} request for ${req.url}`);
-    next();
 });
 
 app.listen(port, () => {
