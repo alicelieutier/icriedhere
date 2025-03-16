@@ -48,6 +48,8 @@ app.use((req, res, next) => {
         res.redirect(301, '/stickers');
     } else if (req.path === '/about.html') {
         res.redirect(301, '/about');
+    } else if (req.path === '/index.html') {
+        res.redirect(301, '/');
     } else {
         next();
     }
