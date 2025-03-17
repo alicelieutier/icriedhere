@@ -190,3 +190,8 @@ div.small-prints {
     font-size: 0.8em;
     text-align: right;
 }
+
+h1.giant {
+    font-size: 5em;
+    margin: 0;
+}

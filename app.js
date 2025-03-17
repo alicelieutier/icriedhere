@@ -122,6 +122,14 @@ app.post('/api/stories', async (req, res) => {
     }
 });
 
+// 404 handler
+app.use((req, res, next) => {
+    res.status(404).render('404', {
+        title: 'Page Not Found - I Cried Here',
+        description: 'The page you are looking for does not exist.',
+    });
+});
+
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);  
 });
