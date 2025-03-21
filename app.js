@@ -96,7 +96,7 @@ const formatStoryDetails = (story) => {
 
 app.get('/api/stories', async (req, res) => {
     try {
-        const result = await query('SELECT * FROM stories WHERE visible = true');
+        const result = await query('SELECT * FROM stories WHERE visible = true ORDER BY id DESC');
         const stories = result.rows.map(story => ({
             story: story.story,
             details: formatStoryDetails(story)
