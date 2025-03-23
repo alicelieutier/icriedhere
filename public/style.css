@@ -18,13 +18,14 @@ ul, ol {
 }
 
 main {
-  max-width: 600px;
   min-height: 70vh;
-  padding: 5px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  text-align: center;
+}
+
+.wrapper {
+    max-width: 600px;
+    padding: 5px;
+    margin: auto;
 }
 
 #stickers-photo {
@@ -170,15 +171,9 @@ div.small-prints {
     justify-content: space-around;
 }
 
-#stories-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    margin: 2em 0;
-}
 
 .story {
-    padding: 10px;
+    padding: 20px;
     text-align: left;
 }
 
