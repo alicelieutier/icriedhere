@@ -11,19 +11,64 @@ async function fetchStories() {
         }
         storiesList.innerHTML = '';
         stories.forEach(story => {
-            const storyElement = document.createElement('div');
-            storyElement.classList.add('story');
-            storyElement.innerHTML = `
-                <p>${story.story}</p>
-                <div class="story-details">${story.details}</div>
-            `;
-            storiesList.appendChild(storyElement);
+            storiesList.appendChild(storyElement(story));
         });
 
     } catch (error) {
         storiesList.innerHTML = 'Error retrieving stories';
         console.error('Error retrieving stories:', error);
     }
+}
+
+function storyElement(story) {
+    const maxLength = 550;
+    const cutLength = 350;
+    const element = document.createElement('div');
+    element.classList.add('story');
+    let content = story.story;
+    let hasMore = false;
+    if (content.length > maxLength) {
+        let i = cutLength;
+        while (content[i] != ' ' && i < content.length) i++;
+        content = content.slice(0,i);
+        hasMore = true;
+    }
+    if (!hasMore) {
+        const contentElement = document.createElement('p');
+        contentElement.innerText = story.story;
+        const detailsElement = document.createElement('div');
+        detailsElement.classList.add('story-details');
+        detailsElement.innerText = story.details;
+        element.appendChild(contentElement);
+        element.appendChild(detailsElement);
+        return element;
+    }
+
+    const contentElement = document.createElement('p');
+    contentElement.innerText = content + '...';
+    let shortened = true;
+    const readMoreElement = document.createElement('a');
+    readMoreElement.innerText = 'read more';
+    readMoreElement.addEventListener('click', () => {
+        if (shortened) {
+            contentElement.innerText = story.story;
+            readMoreElement.innerText = 'read less';
+            shortened = false;
+        } else {
+            contentElement.innerText = content + '...';
+            readMoreElement.innerText = 'read more';
+            shortened = true;
+        }
+    })
+
+    const detailsElement = document.createElement('div');
+    detailsElement.classList.add('story-details');
+    detailsElement.innerText = story.details;
+    
+    element.appendChild(contentElement);
+    element.appendChild(readMoreElement);
+    element.appendChild(detailsElement);
+    return element;
 }
 
 async function submitStory(event) {
