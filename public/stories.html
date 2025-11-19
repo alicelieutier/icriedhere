@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="I cried here is a design project about normalising emotions everywhere. Share your story of crying on this page." />
+    <meta name="image" property="og:image" content="https://icriedhere.com/images/icriedhere_preview.png">
+    <meta name="og:description" content="I cried here is a design project about normalising emotions everywhere. Share your story of crying on this page." />
+    <meta name="og:image" content="https://icriedhere.com/images/icriedhere_preview.png" />
+    <title>Stories - I Cried Here</title>
+    <link rel="stylesheet" href="/style.css" />
+
+        <link rel="stylesheet" href="/loader.css" />
+
+        <!-- <script async src="/stories.js"></script> -->
+
+    <link rel="icon" href="/favicon.ico" />
+    <script data-goatcounter="https://icriedhere.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/"><img src="images/icriedhere.svg" alt="I Cried Here Logo" width="40px"></a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/stickers">Stickers</a></li>
+                <li><a href="/stories">Stories</a></li>
+                <li><a href="mailto:hello@icriedhere.com">Contact</a></li>
+                <li><a href="https://www.instagram.com/i.cried.here">
+                    <svg height="22" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title id="svgTitle">instagram</title><path fill="currentColor" d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+                </a></li>
+            </ul>
+        </nav>
+    </header>  <main>
+<div class="wrapper">
+    <h1>Stories</h1>
+    <form id="story-form">
+        <label for="story">When was the last time YOU cried? Where were you? How did you feel? <a href="mailto:hello@icriedhere.com">Send me your story</a> and I might add it here.</label>
+    </form>
+
+    <section id="stories-list">
+        <div class="loader">
+            <div>Loading stories...</div>
+        </div>
+    </section>
+</div>
+</main>
+    <footer>
+        <p>&copy; Alice Lieutier 2025 - <a href="https://www.buymeacoffee.com/alicelieutier">☕ buy me a flat white</a></p>
+    </footer>  </body>
+
+    <script>
+    const stories = [
+    {
+        "story": "I cried last time I played The Last Of Us 2. It was during the museum sequence, where there are dinosaurs and explanations about space exploration.\nI love stories about space conquest, and each time I hear the countdown before launching a spacecraft, I cry (just thinking of it, I have tears in my eyes haha), and I don't really know why.\nAt the end of the scene (warning! tiny spoiler of the scene here), Joël gives Ellie an audiotape she listen while she's installed in a space capsule. We can hear Apollo 11 launching countdown, so I just couldn't resist, the scene was emotionally too strong for me (also for other reasons I won't give here to avoid too much spoil 😅).",
+        "details": "Colas, 35"
+    },
+    {
+        "story": "I cried a lot when war in Ukraine started, i think i cried for two weeks every day, the pain was just unimaginable. Never in my life I have been so sad. Obviously the war is still here, lots of people are still suffering a lot. Maybe that's why I am very sensitive, I can cry easily these days. But it really helps. After I cry I feel better, but empty.",
+        "details": "Olena, 42"
+    },
+    {
+        "story": "I cried recently in a 1-to-1 with my manager. He is my new manager and he didn't know anything about my personal life, but after a few months of managing me, he had to deal with my special circumstances. He just brought it up, and I started to cry. I couldn't do anything about it. He was very empathetic and dealt with the situation on my behalf, saving me more stress. \nI felt so embarrassed as I'm normally always happy and cheerful and not a crier.",
+        "details": "Lena, 42"
+    },
+    {
+        "story": "god i cry all the time it turns out! i'm rubbish at processing emotions and then they turn into tears before i know what to do with myself\n\nthe last time i shed a tear was literally watching the WWE when it was at london - i was so overwhelmed with joy watching everyone having a good time and was imagining how amazing it must have felt for the wrestlers to feel all that emotion from the crowd\n\nthe last time i properly sad cried was a few weeks ago finding out my mum had cancer - i was imagining how scared she must feel (my dad also died from a really agressive cancer 15 years ago) so i was also thinking of the sadness around that - it's looking really positive but i'm still sad for her having to deal with that \n\ni mostly cry whilst picturing or imagining other peoples emotions tbf",
+        "details": "Anonymous"
+    },
+    {
+        "story": "The last time I cried was from fear. I have musculoskeletal problems, sometimes it hurts to do my job or my hobbies. Whenever I am feeling well, a phase of pain comes back to stop me. I have to walk a fine line of work hard through pain - without doing too much - to become healthy again. Sometimes I doubt I will ever get better and, think that I have no capacity to adapt. Then I have to cry. I am an ugly crier, so when someone sees me cry, I feel that I must apologize. It hurts. I'm scared. Will everything be ok? I am sorry.",
+        "details": "Ruth, 40 "
+    },
+    {
+        "story": "Voglio condividere cosa mi è successo oggi con un monaco buddista al tempio in Tailandia.È stato stranissimo,lui era seduto e c'era una ragazza del luogo inginocchiata davanti a lui e lui non guarda negli occhi a nessuno,e io ero in un angolo a guardare, lui mi vede e dice qualcosa alla ragazza che si allontana e mi fa cenno di avvicinarmi  io mi inginocchio e ho sentito una botta dentro e lui senza guardami mi ha fatto cenno di allungare la mano e mi ha messo un filo intorno al polso e ha inchinato la testa. Mi sono allontanata piangendo a singhiozzi per parecchio tempo.\n--------------------------------------------------------------------------------\nI want to share what happened with a buddhist monk in Thailand last week. It was very strange. A monk was sitting in the temple and there was a local woman kneeling next to him. He wasn’t looking at any one. I was in a corner looking and he sees me and tells something to the local woman who then comes over to me and tells me to get closer to the monk. I kneel down in front of the monk and feel a strong sensation like a punch in the guts. The monk without looking at me indicates to me to extend my arm and puts a thread bracelet around my wrist and bows his head. I moved away crying and sighing for a very long time.\n",
+        "details": "Antonella, 62 "
+    },
+    {
+        "story": "The most memorable time I cried was after I left visiting my mum once.\n\nShe lived alone in what had been our family house. My father had left her a few years previously, and my siblings and I were grown up and had moved out.\n\nMy mum was starting to deteriorate from a degenerative neurological disease and was not really managing living in a house that was too big for her.\n\nMy partner and I lived nearby and frequently visited her to help her.\n\nWe had just visited for several hours to try to help sort out the house, and help her prepare to move to a smaller, more manageable place. (Looking back now I am proud we helped her move: she was much happier in the smaller place.)\n\nMum had always been strong-headed (a.k.a. determined a.k.a. stubborn) (at least since my dad left), but her illness meant she could get confused, angry and aggressive. The visit had been very, very difficult. My partner and I had received abuse for really trying to help, in spite all our efforts to be compassionate. \n\nWe had just left. I was driving, Within a mile of the house I had to pull up on a dual carriage hard shoulder. I burst into tears and sobbed uncontrollable for several minutes, struggling to catch my breath. My nerves were wracked.\n\nIn that situation - and in many situations that followed in the years we took care of mum before she passed away - I knew mum loved me, she knew I was helping, but she was not capable of not becoming angry and defensive because she was ill. It made taking care of her very difficult.\n\nShe passed away three years ago last week. She was 67. Looking back at the 9 years my partner and I took care of my mum, I am so proud of what we were able to do for her. It was the hardest, most important thing I have ever done.\n\nI treasure the time I had with her in the last years. The difficult times - like this time I cried on the hard shoulder of the dual carriage way after leaving her house - make to good times we shared all the more precious.",
+        "details": "Alexis, 40 "
+    },
+    {
+        "story": "Final episode of Adolescence had me howling with tears just last night. I'm welling up just thinking about it.",
+        "details": "Joe, 35 "
+    },
+    {
+        "story": "I cry all the time, because I'm tired, because I'm sad, because I'm in pain, because I'm frustrated or angry... Unfortunately I have chronic conditions that mean I experience pain and fatigue, and my interactions with the NHS cause anger and frustration! But happily, the last time I cried was because I read a passage that touched me: \"We have many devices to protect ourselves from sadness - naturally enough it is a distressing feeling... And yet sadness... is a very noble feeling if we bear it with dignity... To try to run away from the awareness of the pain of sadness is tantamount to thinking of light without shadow, or love without the anxiety of possible separation, of life without death.\"",
+        "details": "Ellie, 36 "
+    },
+    {
+        "story": "The last time I cried, like a proper cry, one filled with grief, despair and resignation, I was maybe 14 years old.\n\nI was at home, and had cooked dinner for the family. The pizza I had cooked started to slip off the tray I was holding. But, fortunately, the tray I was holding had a lip. However, the cheese had no intention of disobeying Newton's first law of motion, and proceeded to slip right off the pizza and onto the floor.\n\nAnd I cried. I don't remember how I felt. Except that I was hungry, and that I was too old to cry.",
+        "details": "Anonymous, 43 "
+    },
+    {
+        "story": "I cried yesterday. I discovered a saying that I hadn't heard before: \"let go or be dragged\". I don't know why really but it just moved me and I cried whilst having my breakfast!",
+        "details": "Dom, 33 "
+    },
+    {
+        "story": "Last time I cried a lot was on a plane. I cried uncontrollably for 40 minutes. The person next to me was very nice and offered me water and tissue.\nI told her I was crying so much not because I was unhappy but because I was happy for the first time in the last 10 years and I was not used to everything going well in my life.",
+        "details": "Giovanni, 59 "
+    },
+    {
+        "story": "I cried in the church that my family attended when I was a child. In the choir area, where we sang as kids. It was after the funeral of a lady who knew us as kids and held a memory of us. I felt a sense of memory and loss at the passing of our young lives, hopes, dreams. I cried on my own, quietly, for 10 minutes. It was a good feeling - real.",
+        "details": "Laurence, 60 "
+    },
+    {
+        "story": "When I am angry, my anger comes out in tears. Which makes me more angry because it’s not the emotion I want to be showing. If I’m angry I want to look angry.",
+        "details": "Sarah, 30 "
+    },
+    {
+        "story": "I always cry in movies or books where a pet dies. There is something so pure about this love that a pet disappearing feels too sad.",
+        "details": "Andreia, 43 "
+    },
+    {
+        "story": "I often cry watching movies. Not even in sad moments, sometimes a few seconds of epic music are enough to make me sob.",
+        "details": "Alice, 37 "
+    },
+    {
+        "story": "When I was a student, I sometimes cried on the subway, going home from school. I knew if I cried at home my parents would be worried and I would have to reassure them.\nIt was during Covid. Everyone in subway had to wear masks, which was convenient. No one could see my facial features, so no one would ask if I'm okay, no one would invade my \"personal space\". It somehow creates a bubble where I am still in interaction with people and I can also freely release my emotions without interruption.\nIt was a 23mins subway ride from my high school to my house. I’d try to control the time so it would be just enough to release some pressure. And after that Iife would continue.",
+        "details": "Moss, 22 "
+    },
+    {
+        "story": "I cannot remember the last time I cried...",
+        "details": "Anonymous "
+    }
+]
+
+function fetchStories() {
+    const storiesList = document.getElementById('stories-list');
+    if (stories.length === 0) {
+        storiesList.innerHTML = 'No stories available';
+        return;
+    }
+    storiesList.innerHTML = '';
+    stories.forEach(story => {
+        storiesList.appendChild(storyElement(story));
+    });
+}
+
+function storyElement(story) {
+    const maxLength = 550;
+    const cutLength = 350;
+    const element = document.createElement('div');
+    element.classList.add('story');
+    let content = story.story;
+    let hasMore = false;
+    if (content.length > maxLength) {
+        let i = cutLength;
+        while (content[i] != ' ' && i < content.length) i++;
+        content = content.slice(0,i);
+        hasMore = true;
+    }
+    if (!hasMore) {
+        const contentElement = document.createElement('p');
+        contentElement.innerText = story.story;
+        const detailsElement = document.createElement('div');
+        detailsElement.classList.add('story-details');
+        detailsElement.innerText = story.details;
+        element.appendChild(contentElement);
+        element.appendChild(detailsElement);
+        return element;
+    }
+
+    const contentElement = document.createElement('p');
+    contentElement.innerText = content + '...';
+    let shortened = true;
+    const readMoreElement = document.createElement('a');
+    readMoreElement.innerText = 'read more';
+    readMoreElement.addEventListener('click', () => {
+        if (shortened) {
+            contentElement.innerText = story.story;
+            readMoreElement.innerText = 'read less';
+            shortened = false;
+        } else {
+            contentElement.innerText = content + '...';
+            readMoreElement.innerText = 'read more';
+            shortened = true;
+        }
+    })
+
+    const detailsElement = document.createElement('div');
+    detailsElement.classList.add('story-details');
+    detailsElement.innerText = story.details;
+    
+    element.appendChild(contentElement);
+    element.appendChild(readMoreElement);
+    element.appendChild(detailsElement);
+    return element;
+}
+
+setTimeout(fetchStories, 500);
+    </script>
+</html>
